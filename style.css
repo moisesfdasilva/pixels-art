@@ -9,19 +9,19 @@
   width: 80px;
 }
 
-#color-palette div:nth-child(1) {
+.color:nth-child( 1 ) {
   background-color: black;
 }
 
-#color-palette div:nth-child(2) {
+.color:nth-child( 2 ) {
   background-color: yellow;
 }
 
-#color-palette div:nth-child(3) {
+.color:nth-child( 3 ) {
   background-color: blue;
 }
 
-#color-palette div:nth-child(4) {
+.color:nth-child( 4 ) {
   background-color: green;
 }
 
