@@ -32,3 +32,11 @@ function paintPixel(action) {
 for (let element = 0; element < document.querySelectorAll('.pixel').length; element += 1) {
   document.querySelectorAll('.pixel')[element].addEventListener('click', paintPixel);
 }
+
+function clearTable() {
+  for (let element = 0; element < document.querySelectorAll('.pixel').length; element += 1) {
+    document.querySelectorAll('.pixel')[element].style.backgroundColor = 'white';
+  }
+}
+
+document.querySelector('#clear-board').addEventListener('click', clearTable);
