@@ -1,5 +1,5 @@
 function early() {
-  let newColor = getComputedStyle(document.querySelector('.color')).backgroundColor;
+  const newColor = getComputedStyle(document.querySelector('.color')).backgroundColor;
   document.querySelector('.color').className = 'selected';
   document.querySelector('.selected').style.backgroundColor = newColor;
 }
@@ -7,13 +7,12 @@ function early() {
 window.onload = early;
 
 function labelClass(action) {
-  let label = document.querySelectorAll('#color-palette div');
+  const label = document.querySelectorAll('#color-palette div');
   for (let element = 0; element < label.length; element += 1) {
     if (action.target === document.querySelectorAll('#color-palette div')[element]) {
       let newColor = getComputedStyle(action.target).backgroundColor;
       action.target.className = 'selected';
       document.querySelector('.selected').style.backgroundColor = newColor;
-
     } else {
       document.querySelectorAll('#color-palette div')[element].className = 'color';
     }
@@ -26,7 +25,7 @@ for(let element = 0; element < document.querySelectorAll('#color-palette div').l
 }
 
 function paintPixel(action) {
-  let newColor = getComputedStyle(document.querySelector('.selected')).backgroundColor;
+  const newColor = getComputedStyle(document.querySelector('.selected')).backgroundColor;
   action.target.style.backgroundColor = newColor;
 }
 
