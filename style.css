@@ -1,28 +1,28 @@
-.color-palette, section{
+#color-palette {
+  height: 100px;
+}
+
+#color-palette div {
   display: inline-block;
   border: 1px solid black;
   height: 80px;
   width: 80px;
 }
 
-.color-palette, section:nth-child(1) {
+#color-palette div:nth-child(1) {
   background-color: black;
 }
 
-.color-palette, section:nth-child(2) {
+#color-palette div:nth-child(2) {
   background-color: yellow;
 }
 
-.color-palette, section:nth-child(3) {
+#color-palette div:nth-child(3) {
   background-color: blue;
 }
 
-.color-palette, section:nth-child(4) {
+#color-palette div:nth-child(4) {
   background-color: green;
-}
-
-.color-palette, section:nth-child(5) {
-  background-color: black;
 }
 
 .pixel {
