@@ -10,6 +10,14 @@
   width: 80px;
 }
 
+#clear-board {
+  margin-bottom: 15px;
+}
+
+#pixel-board {
+  margin-left: 5px;
+}
+
 .color:nth-child( 1 ) {
   background-color: black;
 }
@@ -32,9 +40,6 @@
   background-color: white;
   height: 40px;
   width: 40px;
-}
-
-#clear-board {
-  display: block;
-  margin-bottom: 15px;
+  margin-left: -5px;
+  margin-bottom: -5px;
 }
