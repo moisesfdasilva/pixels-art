@@ -2,7 +2,6 @@ function early() {
   const newColor = getComputedStyle(document.querySelector('.color')).backgroundColor;
   document.querySelector('.color').className = 'selected color';
   document.querySelector('.selected').style.backgroundColor = newColor;
-  // let aleatoryColor = rgb(255, 255, 2);
   for (let element = 1; element <= 3; element += 1) {
     const alColorA = [(Math.random() * 256), (Math.random() * 256), (Math.random() * 256)];
     const alColorB = `${'rgb('}${alColorA[0]}${', '}${alColorA[1]}${', '}${alColorA[2]}${')'}`;
@@ -13,11 +12,12 @@ function early() {
 window.onload = early;
 
 const label = document.querySelectorAll('#color-palette div');
-function labelClass(action) {
+function labelClass(event) {
+  const action = event.target;
   for (let element = 0; element < label.length; element += 1) {
-    if (action.target === document.querySelectorAll('#color-palette div')[element]) {
-      const newColor = getComputedStyle(action.target).backgroundColor;
-      action.target.className = 'selected color';
+    if (action === document.querySelectorAll('#color-palette div')[element]) {
+      const newColor = getComputedStyle(action).backgroundColor;
+      action.className = 'selected color';
       document.querySelector('.selected').style.backgroundColor = newColor;
     } else {
       label[element].className = 'color';
@@ -29,9 +29,10 @@ for (let element = 0; element < label.length; element += 1) {
   label[element].addEventListener('click', labelClass);
 }
 
-function paintPixel(action) {
+function paintPixel(event) {
+  const action = event.target;
   const newColor = getComputedStyle(document.querySelector('.selected')).backgroundColor;
-  action.target.style.backgroundColor = newColor;
+  action.style.backgroundColor = newColor;
 }
 
 for (let element = 0; element < document.querySelectorAll('.pixel').length; element += 1) {
@@ -47,6 +48,7 @@ function clearTable() {
 document.querySelector('#clear-board').addEventListener('click', clearTable);
 
 // REQUISITO 10:
+
 function clearToNewTable() {
   const labelLi = document.querySelectorAll('#pixel-board li');
   const contador = labelLi.length - 1;
@@ -66,11 +68,11 @@ function newTable(num) {
     const myBr = document.createElement('br');
     if ((element + 1) % num === 0 && element > 0) {
       document.querySelector('#pixel-board').appendChild(novoPixel);
-      document.querySelectorAll('#pixel-board li')[element].className = 'pixel';
+      document.getElementsByTagName('li')[element].className = 'pixel';
       document.querySelectorAll('.pixel')[element].insertAdjacentElement('afterend', myBr);
     } else {
       document.querySelector('#pixel-board').appendChild(novoPixel);
-      document.querySelectorAll('#pixel-board li')[element].className = 'pixel';
+      document.getElementsByTagName('li')[element].className = 'pixel';
     }
   }
 }
